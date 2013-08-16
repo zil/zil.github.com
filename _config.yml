@@ -1,0 +1,22 @@
+permalink: /:categories/:year/:month/:day/:title 
+
+include: ["css","images"]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+pygments: true
+
+title : zil
+tagline: Writing Matters
+author :
+  name : zil
+  email : fantanstic@gmail.com
+  github : zil
+  feedburner: zil
+
+archive_path: /archive.html
+pages_path : /pages.html
+categories_path : /categories.html
+tags_path : /tags.html
+about_path : /about.html
+
+comments :
+  provider : duoshuo

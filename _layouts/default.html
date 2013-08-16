@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>{{ page.title }}</title>
+   <meta name="author" content="{{ site.author.name }}" />
+   <link href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="your title" type="application/atom+xml" />
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+</head>
+<body>
+
+  <div class="site">
+    <div class="title">
+      <a class="special" href="/">{{ site.title }}</a>
+      <a class="extra" href="{{ BASE_PATH }}{{ site.archive_path }}">文章</a>
+      <a class="extra" href="{{ BASE_PATH }}{{ site.categories_path }}">分类</a>
+      <a class="extra" href="{{ BASE_PATH }}{{ site.tags_path }}">标签</a>
+      <a class="extra" href="{{ BASE_PATH }}{{ site.about_path }}">关于我</a>
+    </div>
+  
+    {{ content }}
+  
+    <div class="footer">
+      <div class="contact">
+        <p>
+	  &copy <a href="{{ BASE_PATH }}{{ site.about_path }}">Zil</a> | 
+	  Powered by <a href="http://github.com/plusjade/jekyll-bootstrap" >jekyll-bootstrap</a>
+	  & <a href="https://github.com/jekyllbootstrap/theme-tom.git">theme</a>
+	</p>
+      </div>
+    </div>
+  </div>
+  <a href="http://github.com/{{ site.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme_red.png" alt="Fork me on GitHub" /></a>
+
+</body>
+</html>
