@@ -1,8 +1,8 @@
-{% if site.JB.comments.provider and page.comments != false %}
+{% if site.comments.provider and page.comments != false %}
 
-{% case site.JB.comments.provider %}
+{% case site.comments.provider %}
 {% when "duoshuo" %}
-  {% include JB/comments-providers/duoshuo%}
+  {% include JB/comments-providers/duoshuo %}
 {% when "disqus" %}
   {% include JB/comments-providers/disqus %}
 {% when "livefyre" %}
