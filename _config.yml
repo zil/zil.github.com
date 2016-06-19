@@ -3,7 +3,7 @@ permalink: /:categories/:year/:month/:day/:title
 include: ["css","images"]
 exclude: [".rvmrc", ".ruby-version", "README.md", "Rakefile", "changelog.md", "vendor"]
 
-highlighter: pygments
+highlighter: rouge
 
 title : zil
 tagline: Writing Matters

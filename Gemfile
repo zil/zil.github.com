@@ -1,4 +1,4 @@
 source "https://ruby.taobao.org"
 
-ruby '1.9.3'
-gem 'github-pages'
+ruby '2.1.5'
+gem 'github-pages', group: :jekyll_plugins

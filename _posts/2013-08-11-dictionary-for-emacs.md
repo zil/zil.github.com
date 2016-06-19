@@ -40,47 +40,47 @@ dict调用工具dictem
 ![dict]({{ site.url }}/images/dict.png)
 
 ## 上面是在终端下查的，emacs下配置也很简单，把如下代码加到.emacs下就ok了
+{% highlight elisp %}
+(require 'dictem)
+(setq dictem-server "localhost")
 
-    (require 'dictem)
-    (setq dictem-server "localhost")
-    
-    ; 绑定了两个快捷键 C-c,d 单词定义、C-c,m 单词匹配
-    (global-set-key "\C-cm" 'dictem-run-match)
-    (global-set-key "\C-cd" 'dictem-run-define)
-    ; 自定义了三个用户查新词典数据库
-    (setq dictem-user-databases-alist
-       '(("en-en"  . ("gcide" "wn"))
-         ("en-zh" . ("xdict" "stardic"))
-         ("hk". ("jargon"))))
-    (setq dictem-default-database "en-en")
-    (setq dictem-use-user-databases-only t)
-    (define-key dictem-mode-map [tab] 'dictem-next-link)
-    (define-key dictem-mode-map [(backtab)] 'dictem-previous-link)
-    
-    ;; 以下是查询结果显示样式的处理
-    (add-hook 'dictem-postprocess-definition-hook
-              'dictem-postprocess-definition-remove-header)
-    
-    ; For creating hyperlinks on database names
-    ; and found matches.
-    (add-hook 'dictem-postprocess-match-hook
-              'dictem-postprocess-match)
-    
-    ; For highlighting the separator between the definitions found.
-    ; This also creates hyperlink on database names.
-    (add-hook 'dictem-postprocess-definition-hook 
-              'dictem-postprocess-definition-separator)
-    
-    ; For creating hyperlinks in dictem buffer
-    ; that contains definitions.
-    (add-hook 'dictem-postprocess-definition-hook 
-              'dictem-postprocess-definition-hyperlinks)
-    
-    ; For creating hyperlinks in dictem buffer
-    ; that contains information about a database.
-    (add-hook 'dictem-postprocess-show-info-hook
-              'dictem-postprocess-definition-hyperlinks)
+; 绑定了两个快捷键 C-c,d 单词定义、C-c,m 单词匹配
+(global-set-key "\C-cm" 'dictem-run-match)
+(global-set-key "\C-cd" 'dictem-run-define)
+; 自定义了三个用户查新词典数据库
+(setq dictem-user-databases-alist
+   '(("en-en"  . ("gcide" "wn"))
+     ("en-zh" . ("xdict" "stardic"))
+     ("hk". ("jargon"))))
+(setq dictem-default-database "en-en")
+(setq dictem-use-user-databases-only t)
+(define-key dictem-mode-map [tab] 'dictem-next-link)
+(define-key dictem-mode-map [(backtab)] 'dictem-previous-link)
 
+;; 以下是查询结果显示样式的处理
+(add-hook 'dictem-postprocess-definition-hook
+          'dictem-postprocess-definition-remove-header)
+
+; For creating hyperlinks on database names
+; and found matches.
+(add-hook 'dictem-postprocess-match-hook
+          'dictem-postprocess-match)
+
+; For highlighting the separator between the definitions found.
+; This also creates hyperlink on database names.
+(add-hook 'dictem-postprocess-definition-hook 
+          'dictem-postprocess-definition-separator)
+
+; For creating hyperlinks in dictem buffer
+; that contains definitions.
+(add-hook 'dictem-postprocess-definition-hook 
+          'dictem-postprocess-definition-hyperlinks)
+
+; For creating hyperlinks in dictem buffer
+; that contains information about a database.
+(add-hook 'dictem-postprocess-show-info-hook
+          'dictem-postprocess-definition-hyperlinks)
+{% endhighlight %}
 ## 在某个单词(then)上按下C-c,d看看结果
 
 ![结果]({{ site.url }}/images/emacs-dictem-lookup.png)
