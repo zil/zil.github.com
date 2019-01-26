@@ -1,4 +1,5 @@
-source "https://ruby.taobao.org"
+source "https://gems.ruby-china.com"
 
-ruby '2.1.5'
+ruby '2.6.0'
 gem 'github-pages', group: :jekyll_plugins
+gem "nokogiri", ">= 1.8.5"
