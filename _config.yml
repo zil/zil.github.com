@@ -21,3 +21,5 @@ about_path : /about.html
 
 comments :
   provider : duoshuo
+
+theme: jekyll-theme-tactile
